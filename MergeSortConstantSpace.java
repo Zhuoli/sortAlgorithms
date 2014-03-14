@@ -1,5 +1,12 @@
 package sortAlgorithms;
-
+/**
+ *  http://blog.csdn.net/zhongkeli/article/details/8786694
+ *  
+ *  Time complexity: O(nlogn)
+ *  Space Complexity: O(1)
+ * @author CT61557
+ *
+ */
 public class MergeSortConstantSpace {
 	public void merge(int[] A){
 		merge(A,0,A.length/2);

@@ -1,5 +1,10 @@
 package sortAlgorithms;
-
+/**
+ *  T: O(nlog(n)
+ *  Space Complexity: O(n)
+ * @author CT61557
+ *
+ */
 public class MergeSortNSpace {
 
 	public int[] merge(int[] A){
