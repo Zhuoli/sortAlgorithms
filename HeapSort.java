@@ -4,9 +4,22 @@ import java.util.Arrays;
 
 public class HeapSort {
 	int heapSize = 0;
+	public void heapsort(int[] num){
+		int[] A = new int[num.length+1];
+		A[0]=Integer.MAX_VALUE;
+		System.arraycopy(num, 0, A, 1, num.length);
+		System.out.println(Arrays.toString(A));
+		buildMaxHeap(A);
+		for(int i=A.length-1;i>=2;i--){
+			swap(A,i,1);
+			heapSize--;
+			maxHeapify(A,1);
+		}
+		System.arraycopy(A, 1, num, 0, num.length);
+	}
 	private void buildMaxHeap(int[] A){
-		heapSize = A.length;
-		for(int i=A.length/2;i>=0;i--){
+		heapSize = A.length-1;
+		for(int i=A.length/2;i>=1;i--){
 			maxHeapify(A,i);
 		}
 	}
@@ -42,8 +55,8 @@ public class HeapSort {
 	
 	public static void main(String[] args){
 		HeapSort instance = new HeapSort();
-		int[] arr ={7,1,3};
-		instance.buildMaxHeap(arr);
+		int[] arr ={7,1,3,19,12,14,15,6,8,1,2};
+		instance.heapsort(arr);
 		System.out.println(Arrays.toString(arr));
 	}
 }
